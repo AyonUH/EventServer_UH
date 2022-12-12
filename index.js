@@ -27,7 +27,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
 // port
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 
 // listener
 app.listen(port, () => console.log(`🌐 Server is running on port: ${port} 🌐`));
