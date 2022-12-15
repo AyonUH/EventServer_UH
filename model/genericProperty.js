@@ -15,6 +15,14 @@ const genericPropertySchema = new Schema({
     type: String,
     default: "GenericProp",
   },
+  newChangesInIOS: {
+    type: String,
+    default: "--",
+  },
+  newChangesInAndroid: {
+    type: String,
+    default: "--",
+  },
 });
 
 const genericProp = new model("genericProp", genericPropertySchema);

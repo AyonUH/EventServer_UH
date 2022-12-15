@@ -16,6 +16,14 @@ const eventsDataSchema = new Schema({
     type: String,
     default: "Event",
   },
+  newChangesInIOS: {
+    type: String,
+    default: "--",
+  },
+  newChangesInAndroid: {
+    type: String,
+    default: "--",
+  },
 });
 
 const eventData = new model("event", eventsDataSchema);
