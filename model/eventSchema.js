@@ -10,12 +10,18 @@ const eventsDataSchema = new Schema({
   versionIOS: String,
   lastVersionIOS: String,
   dateIOS: String,
-  lastVersionDateIOS: String,
+  lastVersionDateIOS: {
+    type: String,
+    default: "",
+  },
   inAndroid: Boolean,
   versionAndroid: String,
   lastVersionAndroid: String,
   dateAndroid: String,
-  lastVersionDateAndroid: String,
+  lastVersionDateAndroid: {
+    type: String,
+    default: "",
+  },
   dataType: {
     type: String,
     default: "Event",
