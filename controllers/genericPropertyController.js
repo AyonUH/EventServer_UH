@@ -48,10 +48,10 @@ const fetchGenericProperties = async () => {
   }
 };
 
-const findGenericProperties = async (keyword) => {
+const findGenericProperties = async (field, keyword) => {
   try {
     const dataFetched = await genericProp
-      .find({ slug: { $regex: keyword } })
+      .find({ [field]: { $regex: keyword } })
       .sort({ property: 1 });
     if (dataFetched.length === 0) {
       console.log("🟣 NO MATCHING RESULTS FOUND!!! 🟣");
