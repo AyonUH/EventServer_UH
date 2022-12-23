@@ -48,10 +48,10 @@ const fetchEventsData = async () => {
   }
 };
 
-const findEventsData = async (keyword) => {
+const findEventsData = async (field, keyword) => {
   try {
     const dataFetched = await eventData
-      .find({ slug: { $regex: keyword } })
+      .find({ [field]: { $regex: keyword } })
       .sort({ event: 1 });
     if (dataFetched.length === 0) {
       console.log("🟣 NO MATCHING RESULTS FOUND!!! 🟣");

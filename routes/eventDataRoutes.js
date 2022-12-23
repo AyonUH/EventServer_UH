@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/search", async (req, res) => {
-  const dataToSend = await findEventsData(req.query.q);
+  const dataToSend = await findEventsData(req.query.field, req.query.q);
   res.send(dataToSend).end();
 });
 
