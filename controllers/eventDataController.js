@@ -50,9 +50,16 @@ const fetchEventsData = async () => {
 
 const findEventsData = async (field, keyword) => {
   try {
-    const dataFetched = await eventData
-      .find({ [field]: { $regex: keyword } })
-      .sort({ event: 1 });
+    let dataFetched = {};
+    if (keyword.toLowerCase() === "true" || keyword.toLowerCase() === "false") {
+      dataFetched = await eventData
+        .find({ [field]: { $eq: keyword.toLowerCase() } })
+        .sort({ event: 1 });
+    } else {
+      dataFetched = await eventData
+        .find({ [field]: { $regex: keyword } })
+        .sort({ event: 1 });
+    }
     if (dataFetched.length === 0) {
       console.log("🟣 NO MATCHING RESULTS FOUND!!! 🟣");
       return successResponse(

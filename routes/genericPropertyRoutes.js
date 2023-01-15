@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/search", async (req, res) => {
+  console.log(req.query);
   const dataToSend = await findGenericProperties(req.query.field, req.query.q);
   res.send(dataToSend).end();
 });
